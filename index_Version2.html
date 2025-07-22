@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="موسوعتك الطبية العربية الموثوقة. استكشف معلومات دقيقة وحديثة عن الأمراض، الوقاية، ونمط الحياة الصحي.">
+  <meta name="keywords" content="الطب, الأمراض, صحة, معلومات طبية, موسوعة طبية, توعية صحية">
+  <meta name="author" content="الطب الموثوق">
+  <title>الطب الموثوق - موسوعتك الطبية باللغة العربية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap&font-display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>الطب الموثوق</h1>
+    <p>دليلك للمعرفة الصحية الدقيقة باللغة العربية</p>
+  </header>
+
+  <nav aria-label="القائمة الرئيسية">
+    <a href="/home" title="الصفحة الرئيسية">الرئيسية</a>
+    <a href="/encyclopedia" title="الموسوعة الطبية">الموسوعة الطبية</a>
+    <a href="/education" title="التثقيف الصحي">التثقيف الصحي</a>
+    <a href="/policy" title="سياسة التحرير">سياسة التحرير</a>
+    <a href="/contact" title="تواصل معنا">تواصل معنا</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <h2>موسوعة طبية عربية مبسطة وموثوقة</h2>
+      <p>نهدف إلى تمكين المجتمع العربي من الفهم الطبي السليم من خلال محتوى دقيق، محدث، وسهل الفهم.</p>
+      <button class="cta" onclick="window.location.href='/search'">ابدأ البحث الآن</button>
+    </section>
+
+    <section class="features">
+      <section class="feature">
+        <h2>موسوعة الأمراض</h2>
+        <p>شرح مبسط وشامل للحالات الصحية يشمل الأسباب، الأعراض، التشخيص، والعلاج.</p>
+      </section>
+      <section class="feature">
+        <h2>مقالات تثقيفية</h2>
+        <p>معلومات موثوقة عن الوقاية، الغذاء، الصحة النفسية، ونمط الحياة الصحي.</p>
+      </section>
+      <section class="feature">
+        <h2>محتوى مدقق علميًا</h2>
+        <p>نستند إلى مراجع علمية معتمدة ونعتمد مراجعة دورية لضمان جودة المحتوى.</p>
+      </section>
+      <section class="feature">
+        <h2>تجربة استخدام مريحة</h2>
+        <p>واجهة واضحة وسريعة الاستجابة تتيح الوصول السهل للمعلومة.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> الطب الموثوق - جميع الحقوق محفوظة.</p>
+  </footer>
+  <script>
+    // Update year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
