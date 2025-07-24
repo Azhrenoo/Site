@@ -63,3 +63,216 @@
 </body>
 
 </html>
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الموسوعة الطبية - معلومات صحية دقيقة وموثوقة</title>
+  <meta name="description" content="الموسوعة الطبية: ابحث عن معلومات صحية دقيقة وموثوقة عن الأمراض، الأعراض، أعضاء الجسم، والممارسات الطبية." />
+  <meta name="keywords" content="طب, صحة, موسوعة طبية, أمراض, أعراض, أجهزة الجسم, معلومات طبية" />
+  <meta name="author" content="Azhrenoo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Cairo -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- TailwindCSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #f0f9f4 0%, #dff6f0 100%);
+      font-family: 'Cairo', sans-serif;
+      color: #114b5f;
+      min-height: 100vh;
+      padding: 0 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      color: #0b3c49;
+      text-shadow: 1px 1px 2px #8bc34a66;
+    }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #0b3c49cc;
+    }
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 3rem 0.75rem 1.25rem;
+      border-radius: 30px;
+      border: 2px solid #0b3c49;
+      font-size: 1.1rem;
+      transition: border-color 0.3s ease;
+      direction: rtl;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: #8bc34a;
+      box-shadow: 0 0 10px #8bc34a99;
+    }
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: #0b3c49cc;
+      pointer-events: none;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .topics-grid {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+    }
+    .systems-grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem 1rem;
+      box-shadow: 0 10px 25px rgba(139, 195, 74, 0.15);
+      cursor: pointer;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #114b5f;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s ease;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      min-height: 130px;
+      outline: none;
+    }
+    .card:hover, .card:focus {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(139, 195, 74, 0.35);
+      background: #e8f5e9;
+      color: #2c6e49;
+    }
+    .card-icon {
+      font-size: 2.5rem;
+    }
+    .footer {
+      margin-top: 4rem;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 1rem;
+      color: #0b3c49cc;
+      border-top: 1px solid #dff6f0;
+      background: #f0f9f4;
+    }
+    /* Accessibility focus */
+    .card:focus {
+      box-shadow: 0 0 0 3px #8bc34a99;
+    }
+    /* Responsive font for mobile */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.25rem; }
+      .card { font-size: 1rem; }
+    }
+  </style>
+  <script>
+    // Accessibility: Allow card navigation via keyboard
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.card').forEach(card => {
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            card.click();
+          }
+        });
+      });
+
+      // Search functionality (demo, to be replaced with real API)
+      const searchInput = document.querySelector('.search-input');
+      searchInput.addEventListener('input', function () {
+        // For real medical sites: use debounced API call for suggestions/results.
+        // For demo: simple highlight in cards
+        const query = this.value.trim();
+        document.querySelectorAll('.card').forEach(card => {
+          if (query && card.textContent.includes(query)) {
+            card.style.background = '#b2f7ef';
+          } else {
+            card.style.background = 'white';
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <main class="container mx-auto py-10">
+
+    <h1 class="text-center">ابحث عن معلومات طبية دقيقة وموثوقة</h1>
+
+    <div class="search-container" role="search" aria-label="بحث">
+      <input
+        type="text"
+        placeholder="ابحث عن مرض، عرض، أو عضو في الجسم..."
+        class="search-input"
+        aria-label="بحث عن معلومات طبية"
+      />
+      <span class="search-icon" aria-hidden="true">🔍</span>
+    </div>
+
+    <section aria-label="المواضيع الشائعة">
+      <h2>مواضيع شائعة</h2>
+      <div class="grid topics-grid">
+        <button class="card" aria-label="نزلات البرد"><span class="card-icon">🤒</span> نزلات البرد</button>
+        <button class="card" aria-label="السكري"><span class="card-icon">🍬</span> السكري</button>
+        <button class="card" aria-label="تسوّس الأسنان"><span class="card-icon">🦷</span> تسوّس الأسنان</button>
+        <button class="card" aria-label="الصداع النصفي"><span class="card-icon">🧠</span> الصداع النصفي</button>
+        <button class="card" aria-label="الاكتئاب"><span class="card-icon">😥</span> الاكتئاب</button>
+      </div>
+    </section>
+
+    <section aria-label="أجهزة الجسم">
+      <h2>حسب أجهزة الجسم</h2>
+      <div class="grid systems-grid">
+        <button class="card" aria-label="الجهاز القلبي الوعائي"><span class="card-icon">❤️</span> الجهاز القلبي الوعائي</button>
+        <button class="card" aria-label="الجهاز الهضمي"><span class="card-icon">🍽️</span> الجهاز الهضمي</button>
+        <button class="card" aria-label="الجهاز التنفسي"><span class="card-icon">🌬️</span> الجهاز التنفسي</button>
+        <button class="card" aria-label="الجهاز العصبي"><span class="card-icon">🧠</span> الجهاز العصبي</button>
+        <button class="card" aria-label="الجهاز المناعي"><span class="card-icon">🌿</span> الجهاز المناعي</button>
+        <button class="card" aria-label="جهاز الغدد الصماء"><span class="card-icon">🔬</span> جهاز الغدد الصماء</button>
+        <button class="card" aria-label="الجهاز العضلي الهيكلي"><span class="card-icon">🦴</span> الجهاز العضلي الهيكلي</button>
+        <button class="card" aria-label="الجهاز التناسلي"><span class="card-icon">🧬</span> الجهاز التناسلي</button>
+        <button class="card" aria-label="الجهاز البولي"><span class="card-icon">💧</span> الجهاز البولي</button>
+        <button class="card" aria-label="الجهاز اللمفاوي"><span class="card-icon">🩸</span> الجهاز اللمفاوي</button>
+        <button class="card" aria-label="الجهاز الروماتيزمي"><span class="card-icon">🦵</span> الجهاز الروماتيزمي</button>
+        <button class="card" aria-label="الجلد والأظافر"><span class="card-icon">🧤</span> الجلد والأظافر</button>
+      </div>
+    </section>
+
+    <div class="footer" dir="rtl">
+      <strong>تنويه:</strong> المعلومات الطبية المقدمة هنا لأغراض معرفية فقط وليست بديلاً عن استشارة الطبيب المختص. إذا كنت تعاني من أعراض أو حالة صحية، يُرجى مراجعة طبيبك فوراً.
+      <br/>
+      © 2025 الموسوعة الطبية - جميع الحقوق محفوظة
+    </div>
+
+  </main>
+
+</body>
+</html>
