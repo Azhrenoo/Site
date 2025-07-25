@@ -7,8 +7,6 @@
   <title>نزلة البرد | الموسوعة الطبية</title>
   <!-- Tailwind CSS CDN for enhanced styling and button effects -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Three.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
 
@@ -120,9 +118,6 @@
       p, ul {
         font-size: 1rem;
       }
-      #virus-3d {
-        height: 250px !important;
-      }
     }
   </style>
 </head>
@@ -142,10 +137,7 @@
     <section>
       <h2>الأسباب والفيزيولوجيا المرضية</h2>
       <p>تحدث نزلات البرد نتيجة الإصابة بأحد الفيروسات مثل فيروس الراينوفيروس، حيث يدخل الفيروس عن طريق الأنف أو الفم ويبدأ بمهاجمة الخلايا المبطنة للمجاري التنفسية.</p>
-      <!-- Corrected Simple 3D Virus Diagram with Three.js -->
-      <div class="diagram">
-        <div id="virus-3d" style="width:100%; height:400px"></div>
-      </div>
+      <!-- Virus diagram/model removed as requested -->
     </section>
 
     <section>
@@ -183,119 +175,10 @@
     </div>
   </main>
 
-  <!-- Three.js Corrected Simple Virus Model Script -->
   <script>
     // Cold page link logic
     document.getElementById('cold-link').addEventListener('click', function() {
       window.location.href = 'gate.html';
-    });
-
-    // Three.js Simple Virus Model, spikes correctly on sphere
-    const container = document.getElementById('virus-3d');
-    const width = container.offsetWidth;
-    const height = container.offsetHeight;
-
-    // Scene, Camera, Renderer
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf5f7fa);
-
-    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    camera.position.z = 7;
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(width, height);
-    container.appendChild(renderer.domElement);
-
-    // Main Sphere (Virus Body)
-    const sphereRadius = 1.8;
-    const bodyGeometry = new THREE.SphereGeometry(sphereRadius, 32, 32);
-    const bodyMaterial = new THREE.MeshPhongMaterial({
-      color: 0x2e86c1, // blue
-      shininess: 100,
-      specular: 0x6bb4f8
-    });
-    const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
-    scene.add(body);
-
-    // Spikes: evenly distributed on the sphere
-    const spikeCount = 32;
-    const spikeLength = 1.2;
-    for (let i = 0; i < spikeCount; i++) {
-      // Golden angle method for more even distribution
-      const phi = (i / spikeCount) * Math.PI * 2;
-      const theta = Math.acos(1 - 2 * (i + 0.5) / spikeCount);
-
-      // Create spike
-      const spikeGeometry = new THREE.CylinderGeometry(0.07, 0.13, spikeLength, 8);
-      const spikeMaterial = new THREE.MeshPhongMaterial({ color: 0xc0392b }); // red spike
-      const spike = new THREE.Mesh(spikeGeometry, spikeMaterial);
-
-      // Move spike so its base is at (0, -spikeLength/2, 0)
-      spike.position.y = spikeLength / 2;
-
-      // Create a group to position and rotate the spike
-      const spikeGroup = new THREE.Group();
-      spikeGroup.add(spike);
-
-      // Calculate direction vector from center to surface
-      const x = Math.sin(theta) * Math.cos(phi);
-      const y = Math.cos(theta);
-      const z = Math.sin(theta) * Math.sin(phi);
-
-      // Position group on sphere surface, offset by radius
-      spikeGroup.position.set(
-        x * sphereRadius,
-        y * sphereRadius,
-        z * sphereRadius
-      );
-
-      // Orient spike so it points away from center
-      spikeGroup.lookAt(
-        x * (sphereRadius + 2),
-        y * (sphereRadius + 2),
-        z * (sphereRadius + 2)
-      );
-
-      // Tip
-      const tipGeometry = new THREE.SphereGeometry(0.14, 8, 8);
-      const tipMaterial = new THREE.MeshPhongMaterial({ color: 0xffe082 }); // yellow tip
-      const tip = new THREE.Mesh(tipGeometry, tipMaterial);
-      tip.position.y = spikeLength / 2;
-      spike.add(tip);
-
-      scene.add(spikeGroup);
-    }
-
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-    scene.add(ambientLight);
-    const dirLight = new THREE.DirectionalLight(0xffffff, 0.7);
-    dirLight.position.set(5, 8, 5);
-    scene.add(dirLight);
-
-    // Animation
-    function animate() {
-      body.rotation.y += 0.01;
-      body.rotation.x += 0.003;
-      // Rotate all spikes with the body
-      scene.traverse(obj => {
-        if (obj !== body && obj.type === "Group") {
-          obj.rotation.y += 0.01;
-          obj.rotation.x += 0.003;
-        }
-      });
-      renderer.render(scene, camera);
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    // Responsive resize
-    window.addEventListener('resize', () => {
-      const newWidth = container.offsetWidth;
-      const newHeight = container.offsetHeight;
-      renderer.setSize(newWidth, newHeight);
-      camera.aspect = newWidth / newHeight;
-      camera.updateProjectionMatrix();
     });
   </script>
 </body>
