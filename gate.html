@@ -152,20 +152,15 @@
         });
       });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.card').forEach(card => {
-      const text = card.textContent;
-      if (text.includes('نزلات البرد')) {
-        card.addEventListener('click', function () {
-          window.location.href = 'nazlat.html'; // Adjust file name/path as needed
-        });
-      } else if (text.includes('السكري')) {
-        card.addEventListener('click', function () {
-          window.location.href = 'diabetes.html'; // Adjust file name/path as needed
-        });
-      }
+    // Add navigation to السكري
+      document.querySelectorAll('.card').forEach(card => {
+        if (card.textContent.includes('السكري')) {
+          card.addEventListener('click', function () {
+            window.location.href = 'diabetes.html';
+          });
+        }
+      });
     });
-  });
   </script>
 </head>
 <body>
