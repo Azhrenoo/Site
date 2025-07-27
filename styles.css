@@ -3,180 +3,210 @@ body {
   font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9fcff; /* Site background */
-  color: #212529;            /* Default text */
+  background-color: #e9f7fd; /* Lighter blue background for more vibrance */
+  color: #1b263b;            /* Rich dark blue for text */
   line-height: 1.7;
-  direction: rtl;            /* RTL support for Arabic/Hebrew, etc. */
+  direction: rtl;
 }
 
 /* === Header === */
 header {
-  background-color: #004d99; /* Site theme */
-  color: #ffffff;
-  padding: 2rem 2rem;        /* Combined padding for both use cases */
+  background: linear-gradient(90deg, #1e96fc 0%, #0077b6 100%); /* Vibrant blue gradient */
+  color: #fff;
+  padding: 2.5rem 2rem;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Add shadow from quiz style */
+  box-shadow: 0 4px 10px rgba(30,150,252,0.18); /* Deeper shadow for header */
 }
 
 /* === Heading === */
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.6rem;
+  margin-bottom: 0.7rem;
+  color: #ffe066; /* Bright yellow for the title */
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.2);
+}
+
+header p {
+  color: #f9f9fb;
+  font-size: 1.25rem;
 }
 
 /* === Main Section === */
 main {
-  padding: 1rem;
-  max-width: 800px;
+  padding: 1.5rem;
+  max-width: 850px;
   margin: auto;
 }
 
 /* === Navigation === */
 nav {
-  background-color: #003366;
+  background: linear-gradient(90deg, #023e8a 0%, #0096c7 100%);
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
+  gap: 1.7rem;
+  padding: 1.2rem;
   flex-wrap: wrap;
 }
 
 nav a {
-  color: #ffffff;
+  color: #ffe066;
   text-decoration: none;
   font-weight: 700;
-  transition: color 0.3s ease;
+  font-size: 1.12rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 7px;
+  transition: background 0.3s, color 0.3s;
 }
 
 nav a:hover, nav a:focus {
-  color: #a7d4ff;
+  background: #ffd60a;
+  color: #023e8a;
 }
 
 /* === Hero Section === */
 .hero {
-  background: linear-gradient(to bottom right, #eaf6ff, #ffffff);
+  background: linear-gradient(115deg, #48cae4 0%, #f1faee 100%);
   padding: 3rem 2rem;
   text-align: center;
+  border-radius: 18px;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 24px rgba(72,202,228,0.12);
 }
 
 .hero h2 {
   font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: #003366;
+  margin-bottom: 1.1rem;
+  color: #03045e;
+  text-shadow: 1px 1px 12px #a7d4ff;
 }
 
 .hero p {
-  font-size: 1.25rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  color: #333333;
+  font-size: 1.35rem;
+  max-width: 740px;
+  margin: 0 auto 2.2rem;
+  color: #222;
 }
 
 /* === Call to Action Button === */
 .cta, button {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #0077cc;
-  color: #ffffff;
+  margin-top: 1.2rem;
+  padding: 0.8rem 1.7rem;
+  background-image: linear-gradient(90deg, #00b4d8 0%, #0077b6 100%);
+  color: #fff;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  font-size: 1.09rem;
+  box-shadow: 0 2px 8px rgba(0,183,216,0.15);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .cta:hover, .cta:focus, button:hover, button:focus {
-  background-color: #005fa3;
+  background-image: linear-gradient(90deg, #0096c7 0%, #03045e 100%);
+  box-shadow: 0 4px 16px rgba(0,150,199,0.18);
 }
 
 /* Quiz-specific button override */
 button {
-  margin-top: 10px;
-  background-color: #008080;
+  margin-top: 12px;
+  background-image: linear-gradient(90deg, #ff6f61 0%, #f06595 100%);
 }
 
 /* === Features Grid === */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2.5rem;
-  background-color: #ffffff;
+  gap: 2.2rem;
+  padding: 2.7rem;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(33,150,243,0.07);
 }
 
 .feature {
-  background-color: #e3f0fb;
-  border-radius: 12px;
-  padding: 1.5rem;
+  background: linear-gradient(135deg, #f9f871 0%, #a7d4ff 100%);
+  border-radius: 16px;
+  padding: 1.7rem;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
+  box-shadow: 0 3px 12px rgba(255, 230, 102, 0.13);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .feature:hover, .feature:focus {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(72,202,228,0.22);
 }
 
 .feature h2 {
-  color: #004d99;
-  margin-bottom: 0.75rem;
+  color: #0077b6;
+  margin-bottom: 1rem;
 }
 
 .feature p {
-  color: #333;
+  color: #222;
 }
 
 /* === Accordion & Quiz Styles === */
 .accordion {
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  margin-bottom: 1.3rem;
+  border: 2px solid #00b4d8;
+  border-radius: 14px;
   overflow: hidden;
-  background: white;
+  background: #f1faee;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0,180,216,0.09);
 }
 
 .accordion-button {
-  background: #f0f0f0;
+  background: linear-gradient(90deg, #caf0f8 0%, #a7d4ff 100%);
   border: none;
-  padding: 1rem;
-  font-size: 1.1rem;
+  padding: 1.2rem;
+  font-size: 1.18rem;
   width: 100%;
   text-align: right;
   cursor: pointer;
   font-weight: bold;
+  color: #0077b6;
+  transition: background 0.3s;
+}
+
+.accordion-button:hover {
+  background: linear-gradient(90deg, #a7d4ff 0%, #ffe066 100%);
+  color: #03045e;
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  padding: 0 1rem;
+  padding: 0 1.1rem;
   background: #fff;
   transition: max-height 0.4s ease-in-out, padding 0.4s;
+  color: #212529;
 }
 
 .accordion.open .accordion-content {
   max-height: 1000px;
-  padding: 1rem;
+  padding: 1.2rem;
 }
 
 #quiz-result {
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   font-weight: bold;
-  color: green;
+  color: #38b000; /* Vibrant green for positive result */
+  font-size: 1.15rem;
 }
 
 /* === Footer === */
 footer {
-  background-color: #222;
-  color: #ffffff;
+  background: linear-gradient(90deg, #03045e 0%, #0077b6 100%);
+  color: #ffe066;
   text-align: center;
-  padding: 1.2rem;
-  font-size: 0.95rem;
+  padding: 1.3rem;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
 }
 
 /* === Responsive Styles === */
@@ -186,5 +216,8 @@ footer {
   }
   nav {
     flex-direction: column;
+  }
+  main {
+    padding: 0.5rem;
   }
 }
