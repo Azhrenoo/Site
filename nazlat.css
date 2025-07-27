@@ -1,0 +1,79 @@
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f9f9fb;
+  color: #222;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+}
+
+header {
+  background: #008080;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+main {
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.accordion {
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.accordion-button {
+  background: #f0f0f0;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  background: #fff;
+  transition: max-height 0.4s ease-in-out, padding 0.4s;
+}
+
+.accordion.open .accordion-content {
+  max-height: 1000px;
+  padding: 1rem;
+}
+
+button {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#quiz-result {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: green;
+}
