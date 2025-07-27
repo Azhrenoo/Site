@@ -1,19 +1,37 @@
+/* === Base Styles & Layout === */
 body {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9fcff;
-  color: #212529;
+  background-color: #f9fcff; /* Site background */
+  color: #212529;            /* Default text */
   line-height: 1.7;
+  direction: rtl;            /* RTL support for Arabic/Hebrew, etc. */
 }
 
+/* === Header === */
 header {
-  background-color: #004d99;
+  background-color: #004d99; /* Site theme */
   color: #ffffff;
-  padding: 1.5rem 2rem;
+  padding: 2rem 2rem;        /* Combined padding for both use cases */
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Add shadow from quiz style */
 }
 
+/* === Heading === */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* === Main Section === */
+main {
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* === Navigation === */
 nav {
   background-color: #003366;
   display: flex;
@@ -34,6 +52,7 @@ nav a:hover, nav a:focus {
   color: #a7d4ff;
 }
 
+/* === Hero Section === */
 .hero {
   background: linear-gradient(to bottom right, #eaf6ff, #ffffff);
   padding: 3rem 2rem;
@@ -53,7 +72,8 @@ nav a:hover, nav a:focus {
   color: #333333;
 }
 
-.cta {
+/* === Call to Action Button === */
+.cta, button {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
@@ -64,13 +84,21 @@ nav a:hover, nav a:focus {
   font-weight: bold;
   border: none;
   cursor: pointer;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
-.cta:hover, .cta:focus {
+.cta:hover, .cta:focus, button:hover, button:focus {
   background-color: #005fa3;
 }
 
+/* Quiz-specific button override */
+button {
+  margin-top: 10px;
+  background-color: #008080;
+}
+
+/* === Features Grid === */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -101,6 +129,48 @@ nav a:hover, nav a:focus {
   color: #333;
 }
 
+/* === Accordion & Quiz Styles === */
+.accordion {
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.accordion-button {
+  background: #f0f0f0;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  background: #fff;
+  transition: max-height 0.4s ease-in-out, padding 0.4s;
+}
+
+.accordion.open .accordion-content {
+  max-height: 1000px;
+  padding: 1rem;
+}
+
+#quiz-result {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: green;
+}
+
+/* === Footer === */
 footer {
   background-color: #222;
   color: #ffffff;
@@ -109,11 +179,11 @@ footer {
   font-size: 0.95rem;
 }
 
+/* === Responsive Styles === */
 @media (max-width: 600px) {
   .hero h2 {
     font-size: 2.2rem;
   }
-
   nav {
     flex-direction: column;
   }
