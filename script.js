@@ -1,34 +1,52 @@
+document.addEventListener('DOMContentLoaded', function () {
+  // Handle tab switching between difficulty levels
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const sections = document.querySelectorAll('.accordion-section');
 
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.getAttribute('data-target');
 
-  document.addEventListener("DOMContentLoaded", function () {
-  const modeButtons = document.querySelectorAll(".mode-switcher button");
-  const modes = ["basic", "intermediate", "advanced"];
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      sections.forEach(sec => sec.classList.remove('active'));
 
-  function showMode(mode) {
-    modes.forEach(m => {
-      document.querySelectorAll(`.mode-${m}`).forEach(section => {
-        section.classList.add("hidden");
-      });
-    });
-
-    document.querySelectorAll(`.mode-${mode}`).forEach(section => {
-      section.classList.remove("hidden");
-      section.classList.add("fade-in");
-    });
-
-    modeButtons.forEach(btn => btn.classList.remove("active"));
-    document.querySelector(`.btn-${mode}`).classList.add("active");
-  }
-
-  modeButtons.forEach(button => {
-    button.addEventListener("click", function () {
-      const selectedMode = this.dataset.mode;
-      showMode(selectedMode);
+      button.classList.add('active');
+      document.getElementById(target).classList.add('active');
     });
   });
 
-  // Show the basic mode by default on load
-  showMode("basic");
-});
+  // Accordion toggle behavior
+  const accordions = document.querySelectorAll('.accordion');
+  accordions.forEach((accordion, index) => {
+    const header = accordion.querySelector('.accordion-header');
+    if (index === 0) {
+      accordion.classList.add('active');
+    }
+    header.addEventListener('click', () => {
+      accordion.classList.toggle('active');
+    });
+  });
 
-}
+  // Quiz functionality
+  const submitButton = document.querySelector('.submit-quiz');
+  const quizResult = document.querySelector('.quiz-result');
+
+  if (submitButton) {
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const answers = {
+        q1: 'A',
+        q2: 'B',
+      };
+
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+
+      quizResult.textContent = `نتيجتك: ${score} من ${Object.keys(answers).length}`;
+    });
+  }
+});
