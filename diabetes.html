@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>مرض السكري - الموقع الطبي</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Styled difficulty selector */
+    #difficulty-selector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    #difficulty-selector label {
+      font-weight: bold;
+      color: #0050a5;
+    }
+    #difficulty {
+      padding: 0.6rem 1rem;
+      border: 2px solid #0050a5;
+      border-radius: 6px;
+      background-color: #e0f2ff;
+      color: #0050a5;
+      font-size: 1rem;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      /* custom arrow */
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20d='M2%205L0%200h4z'%20fill='%230050a5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 10px) center;
+    }
+  </style>
 </head>
 <body>
   <header>
