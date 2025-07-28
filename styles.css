@@ -1,133 +1,225 @@
+/* === Base Styles & Layout === */
 body {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f7f9fc;
-  color: #333;
+  background-color: #e9f7fd; /* Lighter blue background for more vibrance */
+  color: #1b263b;            /* Rich dark blue for text */
+  line-height: 1.7;
+  direction: rtl;
 }
 
+/* === Header === */
 header {
-  background-color: #2196f3;
-  color: white;
-  padding: 1rem;
+  background: linear-gradient(90deg, #1e96fc 0%, #0077b6 100%); /* Vibrant blue gradient */
+  color: #fff;
+  padding: 2.5rem 2rem;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(30,150,252,0.18);
 }
 
-.container {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
+/* === Heading === */
 h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.6rem;
+  margin-bottom: 0.7rem;
+  color: #ffe066; /* Bright yellow for the title */
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.2);
 }
 
-.tabs {
+header p {
+  color: #f9f9fb;
+  font-size: 1.25rem;
+}
+
+/* === Main Section === */
+main {
+  padding: 1.5rem;
+  max-width: 850px;
+  margin: auto;
+}
+
+/* === Navigation === */
+nav {
+  background: linear-gradient(90deg, #023e8a 0%, #0096c7 100%);
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  gap: 1.7rem;
+  padding: 1.2rem;
   flex-wrap: wrap;
-  gap: 10px;
 }
 
-.tab-button {
-  background-color: #e0e0e0;
-  border: none;
-  padding: 0.7rem 1.5rem;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 20px;
-  transition: 0.3s;
+nav a {
+  color: #ffe066;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.12rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 7px;
+  transition: background 0.3s, color 0.3s;
 }
 
-.tab-button.active {
-  background-color: #2196f3;
-  color: white;
+nav a:hover, nav a:focus {
+  background: #ffd60a;
+  color: #023e8a;
 }
 
-.accordion-section {
-  display: none;
+/* === Hero Section === */
+.hero {
+  background: linear-gradient(115deg, #48cae4 0%, #f1faee 100%);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 18px;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 24px rgba(72,202,228,0.12);
 }
 
-.accordion-section.active {
-  display: block;
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.1rem;
+  color: #03045e;
+  text-shadow: 1px 1px 12px #a7d4ff;
 }
 
-.accordion {
-  background-color: white;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+.hero p {
+  font-size: 1.35rem;
+  max-width: 740px;
+  margin: 0 auto 2.2rem;
+  color: #222;
 }
 
-.accordion-header {
-  padding: 1rem;
+/* === Call to Action Button === */
+.cta, button {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.8rem 1.7rem;
+  background-image: linear-gradient(90deg, #00b4d8 0%, #0077b6 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
   font-weight: bold;
-  font-size: 1.1rem;
+  border: none;
   cursor: pointer;
-  position: relative;
-  background-color: #f1f1f1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 1.09rem;
+  box-shadow: 0 2px 8px rgba(0,183,216,0.15);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-.accordion-header i {
-  transition: transform 0.3s ease;
+.cta:hover, .cta:focus, button:hover, button:focus {
+  background-image: linear-gradient(90deg, #0096c7 0%, #03045e 100%);
+  box-shadow: 0 4px 16px rgba(0,150,199,0.18);
 }
 
-.accordion.active .accordion-header i {
-  transform: rotate(90deg);
+/* Quiz-specific button override */
+button {
+  margin-top: 12px;
+  background-image: linear-gradient(90deg, #ff6f61 0%, #f06595 100%);
+}
+
+/* === Features Grid === */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.2rem;
+  padding: 2.7rem;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(33,150,243,0.07);
+}
+
+.feature {
+  background: linear-gradient(135deg, #f9f871 0%, #a7d4ff 100%);
+  border-radius: 16px;
+  padding: 1.7rem;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(255, 230, 102, 0.13);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature:hover, .feature:focus {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(72,202,228,0.22);
+}
+
+.feature h2 {
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+.feature p {
+  color: #222;
+}
+
+/* === Accordion & Quiz Styles === */
+/* FINAL contrast fix: use darker text for light backgrounds */
+.accordion {
+  margin-bottom: 1.3rem;
+  border: 2px solid #00b4d8;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f1faee;
+  color: #1b263b; /* Dark blue text for good contrast */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,180,216,0.09);
+}
+
+.accordion-button {
+  background: linear-gradient(90deg, #caf0f8 0%, #a7d4ff 100%);
+  border: none;
+  padding: 1.2rem;
+  font-size: 1.18rem;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+  font-weight: bold;
+  color: #0077b6;
+  transition: background 0.3s;
+}
+
+.accordion-button:hover {
+  background: linear-gradient(90deg, #a7d4ff 0%, #ffe066 100%);
+  color: #03045e;
 }
 
 .accordion-content {
-  padding: 1rem;
-  display: none;
-  border-top: 1px solid #ddd;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.1rem;
+  background: #fff;
+  color: #1b263b; /* Make sure text is dark for contrast */
+  transition: max-height 0.4s ease-in-out, padding 0.4s;
 }
 
-.accordion.active .accordion-content {
-  display: block;
+.accordion.open .accordion-content {
+  max-height: 1000px;
+  padding: 1.2rem;
 }
 
-.quiz {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.quiz h3 {
-  margin-bottom: 1rem;
-}
-
-.quiz-question {
-  margin-bottom: 1rem;
-}
-
-.quiz-options label {
-  display: block;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-}
-
-button.submit-quiz {
-  margin-top: 1rem;
-  background-color: #2196f3;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.quiz-result {
-  margin-top: 1rem;
+#quiz-result {
+  margin-top: 1.2rem;
   font-weight: bold;
-  color: green;
+  color: #38b000; /* Vibrant green for positive result */
+  font-size: 1.15rem;
+}
+
+/* === Footer === */
+footer {
+  background: linear-gradient(90deg, #03045e 0%, #0077b6 100%);
+  color: #ffe066;
+  text-align: center;
+  padding: 1.3rem;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+  nav {
+    flex-direction: column;
+  }
+  main {
+    padding: 0.5rem;
+  }
 }
