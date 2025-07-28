@@ -1,79 +1,180 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الاكتئاب</title>
+  <meta name="description" content="مقال شامل عن مرض الاكتئاب يشمل التعريف، الأسباب، الفحوصات، والعلاج بمستويات صعوبة مختلفة.">
+  <title>الاكتئاب - معلومات طبية مبسطة</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .difficulty-selector {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .difficulty-button {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .difficulty-button:hover,
+    .difficulty-button.active {
+      background-color: #0088cc;
+      color: #fff;
+    }
+
+    .difficulty-content {
+      display: none;
+    }
+
+    .difficulty-content.active {
+      display: block;
+    }
+
+    .quiz {
+      margin-top: 2rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    .quiz-question {
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
+
 <body>
-  <header class="header">
+  <div class="container">
     <h1>الاكتئاب</h1>
+
     <div class="difficulty-selector">
-      <button class="difficulty-btn active" data-difficulty="general">عام</button>
-      <button class="difficulty-btn" data-difficulty="intermediate">متوسط</button>
-      <button class="difficulty-btn" data-difficulty="advanced">متقدم</button>
+      <button class="difficulty-button active" data-level="basic">العامة</button>
+      <button class="difficulty-button" data-level="intermediate">المتوسطة</button>
+      <button class="difficulty-button" data-level="advanced">المتقدمة</button>
     </div>
-  </header>
 
-  <main class="content">
-    <!-- General Content -->
-    <section class="difficulty-content general active">
-      <div class="section">
-        <h2>فهم سريع للمرض</h2>
-        <p>الاكتئاب هو اضطراب نفسي شائع يؤثر على المشاعر والتفكير والسلوك. يسبب شعورًا بالحزن وفقدان الاهتمام بالأشياء التي كانت ممتعة سابقًا.</p>
-      </div>
-      <div class="section">
-        <h2>الأعراض والعلامات الخطيرة</h2>
-        <p>من أبرز الأعراض: الحزن المستمر، فقدان الطاقة، تغير الشهية أو النوم، التفكير في الموت أو الانتحار. إذا ظهرت هذه الأعراض، يُنصح بمراجعة طبيب مختص.</p>
-      </div>
-      <div class="section">
-        <h2>كيف يشخص الأطباء المرض؟</h2>
-        <p>يعتمد التشخيص على مقابلة سريرية يجريها الطبيب أو الأخصائي النفسي باستخدام معايير محددة مثل دليل DSM-5.</p>
-      </div>
-      <div class="section">
-        <h2>كيف تتعالج وتتعافى؟</h2>
-        <p>العلاج يشمل الأدوية المضادة للاكتئاب والعلاج النفسي مثل العلاج المعرفي السلوكي. في بعض الحالات، يُستخدم التحفيز المغناطيسي أو الكهربائي.</p>
-      </div>
-      <div class="section">
-        <h2>معلومات تهمك</h2>
-        <p>الدعم الاجتماعي والنشاط البدني والنوم الجيد وتجنب العزلة تلعب دورًا كبيرًا في التحسن.</p>
-      </div>
-    </section>
-
-    <!-- Intermediate Content -->
-    <section class="difficulty-content intermediate">
-      <div class="section">
-        <h2>مقدمة تشريحية وتشخيصية</h2>
-        <p>الاكتئاب يرتبط بخلل في النواقل العصبية مثل السيروتونين والنورإبينفرين. الفحوص تشمل مقابلة سريرية وتقييم باستخدام مقاييس مثل PHQ-9.</p>
-      </div>
-      <div class="section">
-        <h2>أنواع الاكتئاب</h2>
-        <p>يشمل الاكتئاب الجسيم (MDD)، الاكتئاب الجزئي (PDD)، واكتئاب ما بعد الولادة. لكل نوع خصائص سريرية وتوصيات علاجية مختلفة.</p>
-      </div>
-      <div class="section">
+    <div id="basic" class="difficulty-content active">
+      <section>
+        <h2>ما هو الاكتئاب؟</h2>
+        <p>الاكتئاب هو حالة نفسية تؤثر على المزاج وتُشعر الشخص بالحزن وفقدان الاهتمام.</p>
+      </section>
+      <section>
+        <h2>الأسباب</h2>
+        <p>يمكن أن يكون السبب بيولوجياً أو نفسياً أو اجتماعياً مثل ضغوط الحياة أو فقدان شخص عزيز.</p>
+      </section>
+      <section>
+        <h2>الفحوصات</h2>
+        <p>يعتمد التشخيص على تقييم الطبيب للحالة النفسية، وأحيانًا تُستخدم استبيانات.</p>
+      </section>
+      <section>
         <h2>العلاج</h2>
-        <p>الخيارات تشمل SSRIs كخط أول (مثل سيرترالين)، أو SNRIs، مع مراعاة الآثار الجانبية والتفاعلات. يوصى بالعلاج النفسي المتزامن خاصة في الحالات المتوسطة والشديدة.</p>
-      </div>
-    </section>
+        <p>يتضمن العلاج النفسي، الأدوية المضادة للاكتئاب، والدعم الاجتماعي.</p>
+      </section>
+    </div>
 
-    <!-- Advanced Content -->
-    <section class="difficulty-content advanced">
-      <div class="section">
-        <h2>أحدث الأبحاث</h2>
-        <p>تشير دراسات حديثة إلى دور الالتهاب المناعي في الاكتئاب، كما يتم استكشاف تأثير العلاج بالكيتمين واستخدام الذكاء الاصطناعي في التنبؤ بالاستجابة للعلاج.</p>
-      </div>
-      <div class="section">
-        <h2>تخصيص العلاج</h2>
-        <p>الطب الدقيق يستخدم الجينات والبيانات البيومترية لاختيار العلاج الأمثل، وهناك تجارب سريرية تعتمد على التصوير الدماغي لتوجيه خيارات العلاج.</p>
-      </div>
-      <div class="section">
-        <h2>خوارزميات التقييم والعلاج</h2>
-        <p>توصي الإرشادات العالمية بمتابعة صارمة بناء على تقييم الخطورة والفعالية، مع إمكانية الجمع بين العلاجات الدوائية والسلوكية وتقييم التقدم عبر أدوات معيارية.</p>
-      </div>
-    </section>
-  </main>
+    <div id="intermediate" class="difficulty-content">
+      <section>
+        <h2>ما هو الاكتئاب؟</h2>
+        <p>يُعد الاكتئاب اضطرابًا مزاجيًا شائعًا يتميز بانخفاض مستمر في المزاج وفقدان الاهتمام أو المتعة في الأنشطة اليومية.</p>
+      </section>
+      <section>
+        <h2>الأسباب</h2>
+        <p>تشمل العوامل البيولوجية (مثل انخفاض السيروتونين)، النفسية (مثل الصدمات)، والاجتماعية (مثل العزلة المزمنة).</p>
+      </section>
+      <section>
+        <h2>الفحوصات</h2>
+        <p>تشمل المقابلة النفسية، واستخدام أدوات تشخيصية مثل مقياس بيك للاكتئاب.</p>
+      </section>
+      <section>
+        <h2>العلاج</h2>
+        <p>يشمل العلاج المعرفي السلوكي (CBT)، مثبطات استرجاع السيروتونين الانتقائية (SSRIs)، والمتابعة المستمرة.</p>
+      </section>
+    </div>
 
-  <script src="script.js"></script>
+    <div id="advanced" class="difficulty-content">
+      <section>
+        <h2>ما هو الاكتئاب؟</h2>
+        <p>يُعرف الاكتئاب سريريًا باضطراب الاكتئاب الجسيم (MDD)، وهو اضطراب معقد متعدد العوامل يؤثر على الوظائف العصبية والهرمونية والسلوكية.</p>
+      </section>
+      <section>
+        <h2>الأسباب</h2>
+        <p>تشمل عوامل وراثية (مثل تعدد أشكال جين SLC6A4)، واختلال المحاور HPA، وتغيرات في الشبكات الدماغية المسؤولة عن التنظيم العاطفي.</p>
+      </section>
+      <section>
+        <h2>الفحوصات</h2>
+        <p>تشمل تقييم الأعراض باستخدام DSM-5، اختبارات التقييم النفسي المتقدمة، وأحيانًا التصوير العصبي الوظيفي مثل fMRI.</p>
+      </section>
+      <section>
+        <h2>العلاج</h2>
+        <p>يشمل العلاج الدوائي باستخدام SNRI، التحفيز المغناطيسي عبر الجمجمة (TMS)، والعلاج النفسي متعدد المحاور.</p>
+      </section>
+    </div>
+
+    <div class="quiz">
+      <h2>اختبر معلوماتك</h2>
+      <div class="quiz-question">
+        <p>ما هو العرض الأساسي للاكتئاب؟</p>
+        <label><input type="radio" name="q1" value="a"> ارتفاع ضغط الدم</label><br>
+        <label><input type="radio" name="q1" value="b"> الحزن المستمر</label><br>
+        <label><input type="radio" name="q1" value="c"> الحمى</label>
+      </div>
+      <div class="quiz-question">
+        <p>أي من الآتي يُعد من طرق العلاج؟</p>
+        <label><input type="radio" name="q2" value="a"> الراحة التامة فقط</label><br>
+        <label><input type="radio" name="q2" value="b"> العلاج المعرفي السلوكي</label><br>
+        <label><input type="radio" name="q2" value="c"> الصيام</label>
+      </div>
+      <button onclick="checkQuiz()">تحقق من إجاباتك</button>
+      <p id="quiz-result"></p>
+    </div>
+  </div>
+
+  <script>
+    // Difficulty tab switching
+    const buttons = document.querySelectorAll('.difficulty-button');
+    const contents = document.querySelectorAll('.difficulty-content');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        contents.forEach(content => {
+          content.classList.remove('active');
+        });
+        document.getElementById(button.dataset.level).classList.add('active');
+      });
+    });
+
+    // Quiz logic
+    function checkQuiz() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      const result = document.getElementById('quiz-result');
+
+      if (!q1 || !q2) {
+        result.textContent = 'يرجى اختيار إجابة لكل سؤال';
+        result.style.color = 'red';
+        return;
+      }
+
+      if (q1.value === 'b' && q2.value === 'b') {
+        result.textContent = 'إجاباتك صحيحة! أحسنت.';
+        result.style.color = 'green';
+      } else {
+        result.textContent = 'بعض الإجابات غير صحيحة. حاول مرة أخرى.';
+        result.style.color = 'orange';
+      }
+    }
+  </script>
 </body>
+
 </html>
