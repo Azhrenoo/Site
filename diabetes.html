@@ -6,6 +6,28 @@
   <title>داء السكري - الموقع الطبي</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
+  <style>
+    .difficulty-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .difficulty-tab {
+      padding: 10px 20px;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .difficulty-tab.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -139,6 +161,18 @@
       });
       document.getElementById(selected).style.display = 'block';
     }
+
+    // Accordion logic
+    document.querySelectorAll(".accordion-button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const parent = btn.parentElement;
+        const all = document.querySelectorAll(".accordion");
+        all.forEach(sec => {
+          if (sec !== parent) sec.classList.remove("open");
+        });
+        parent.classList.toggle("open");
+      });
+    });
   </script>
 </body>
 </html>
