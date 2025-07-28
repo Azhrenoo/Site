@@ -40,14 +40,11 @@
   <header>
     <h1>🩺 مرض السكري</h1>
     <p>معلومات موثوقة بطريقة سهلة وتفاعلية</p>
-    <div id="difficulty-selector">
-      <label for="difficulty">اختر مستوى التفاصيل:</label>
-      <select id="difficulty" onchange="switchDifficulty()">
-        <option value="basic">🧒 المستوى العام</option>
-        <option value="intermediate">🎓 المستوى المتوسط</option>
-        <option value="advanced">🔬 المستوى المتقدم</option>
-      </select>
-    </div>
+    <nav class="difficulty-tabs" aria-label="اختيار مستوى التفاصيل">
+  <button class="difficulty-tab active" data-target="basic">🧒 المستوى العام</button>
+  <button class="difficulty-tab" data-target="intermediate">🎓 المستوى المتوسط</button>
+  <button class="difficulty-tab" data-target="advanced">🔬 المستوى المتقدم</button>
+</nav>
   </header>
 
   <main>
